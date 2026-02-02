@@ -409,14 +409,6 @@ a {
 
 .portfolio-item {
   width: calc((100% - 48px) / 3);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portfolio-item:hover {
-  box-shadow:
-    0px 2px 1px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16),
-    0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-image-wrapper {
@@ -954,13 +946,17 @@ a {
   height: 100%;
   background-color: #ffffff;
   z-index: 2000;
-  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   display: flex;
   flex-direction: column;
 }
 
 .mobile-menu-overlay.is-open {
-  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* Mobile Menu Close Button */
@@ -1121,14 +1117,14 @@ a {
   }
 
   .hero {
-    padding: 112px 15px;
+    padding: 72px 15px;
   }
 
   .hero-title {
     font-size: 36px;
     line-height: 1.11;
     max-width: 100%;
-    margin-bottom: 32px;
+    margin-bottom: 72px;
   }
 
   .features {
@@ -1177,11 +1173,13 @@ a {
 
   .team-list {
     flex-direction: column;
+    align-items: center;
     gap: 72px;
   }
 
   .team-item {
-    flex-basis: 100%;
+    width: 264px;
+    flex-basis: auto;
   }
 
   .team-item img {
@@ -1254,6 +1252,7 @@ a {
   .footer-subscribe-form {
     flex-direction: column;
     align-items: stretch;
+    gap: 16px;
   }
 
   .footer-subscribe-input {
@@ -1375,11 +1374,13 @@ a {
 
   .team-list {
     flex-wrap: wrap;
+    justify-content: center;
     gap: 72px 24px;
   }
 
   .team-item {
-    flex-basis: calc((100% - 24px) / 2);
+    width: 264px;
+    flex-basis: auto;
   }
 
   .team-item img {
@@ -1438,10 +1439,7 @@ a {
 @media (min-width: 1158px) {
   .container {
     max-width: 1158px;
-  }
-
-  .header .container {
-    padding: 0 156px;
+    padding: 0 15px;
   }
 
   .logo {
@@ -1485,6 +1483,15 @@ a {
     height: 112px;
   }
 
+  .features-subtitle {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+  }
+
   .team {
     padding: 120px 0;
   }
@@ -1510,6 +1517,14 @@ a {
 
   .portfolio-item {
     width: calc((100% - 48px) / 3);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .portfolio-item:hover {
+    box-shadow:
+      0px 2px 1px rgba(46, 47, 66, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16),
+      0px 1px 6px rgba(46, 47, 66, 0.08);
   }
 
   .footer {
@@ -1529,12 +1544,11 @@ a {
   .footer-right {
     display: flex;
     flex-direction: row;
-    gap: 120px;
+    gap: 80px;
   }
 
   .footer-center {
     flex-shrink: 0;
-    margin-right: 120px;
     margin-bottom: 0;
   }
 
